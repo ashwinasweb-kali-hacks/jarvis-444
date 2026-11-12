@@ -1,0 +1,7 @@
+# Core requirements for Stages 1 & 2 offline voice spine
+faster-whisper>=1.0.0
+sounddevice>=0.4.6
+numpy>=1.24.0
+# Default voice output (free neural voices, no key; needs internet).
+# Set JARVIS_TTS_MODEL=piper or pyttsx3 for fully offline speech.
+edge-tts>=6.1.0

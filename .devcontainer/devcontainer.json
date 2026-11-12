@@ -1,0 +1,29 @@
+{
+  "name": "JARVIS-OS",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "forwardPorts": [8765, 20128],
+  "portsAttributes": {
+    "8765": { "label": "JARVIS daemon" },
+    "20128": { "label": "9Router gateway" }
+  },
+  "postCreateCommand": "python -m pip install --quiet -r requirements.txt || true",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "saoudrizwan.claude-dev",
+        "continue.continue",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "eamodio.gitlens",
+        "zhuangtongfa.Material-theme",
+        "PKief.material-icon-theme"
+      ],
+      "settings": {
+        "workbench.colorTheme": "One Dark Pro",
+        "workbench.iconTheme": "material-icon-theme"
+      }
+    }
+  }
+}

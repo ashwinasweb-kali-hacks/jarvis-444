@@ -1,0 +1,42 @@
+[
+  {
+    "file": "sounds/acknowledge_1.mp3",
+    "label": "Shall I?",
+    "sha256": "875aa7b1c1f9086bbb5a0ff74e58924e2e5b131a79c8d1a54cfcaaf252facd3f"
+  },
+  {
+    "file": "sounds/acknowledge_2.mp3",
+    "label": "At your service, sir.",
+    "sha256": "96415b9b3750489eb9f1943bb50895eff67b6b6b55133ccaa372251a51d0487e"
+  },
+  {
+    "file": "sounds/acknowledge_3.mp3",
+    "label": "For you, sir, always.",
+    "sha256": "5991f4797b2f899a8e7436480db03b1a84435978f86d24c29ae56fd6a0f8fc87"
+  },
+  {
+    "file": "sounds/acknowledge_4.mp3",
+    "label": "As you wish.",
+    "sha256": "dd3b88e968cafa7c8800c0e274a9b795e23826df6fd2822117cd6522ca3b06de"
+  },
+  {
+    "file": "sounds/acknowledge_5.mp3",
+    "label": "Will do, sir.",
+    "sha256": "70370dfe48a0dcdf743f9a6457b6d4e78d56b80f8e0a3486535e247859ae9a3f"
+  },
+  {
+    "file": "sounds/acknowledge_6.mp3",
+    "label": "Working on it. Do try to resist asking again.",
+    "sha256": "0adcba83acdde4ad6f31cc0b2129df96f1678cb9ab3d90a7dd5f1df6b3d49e0e"
+  },
+  {
+    "file": "sounds/acknowledge_7.mp3",
+    "label": "Noted. Processing \u2014 which is the part where you wait.",
+    "sha256": "934d1a1be4d93504e617925e1b781fab5bdecda240ac1f3124f98dc3af6e9e79"
+  },
+  {
+    "file": "sounds/acknowledge_8.mp3",
+    "label": "I have the task. I'll let you know when that changes.",
+    "sha256": "ec987b76d3508c2d8d69932d254d5ab8fbe3b6c659244bbac99453233ef67c41"
+  }
+]

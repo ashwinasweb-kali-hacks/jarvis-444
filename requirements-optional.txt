@@ -1,0 +1,10 @@
+# Optional text-to-speech, tests, and audio file writing
+
+# Fully offline TTS fallback (always available, robotic).
+pyttsx3>=2.90
+# Offline neural alternatives (install one of these if you want offline quality):
+#   piper-tts>=1.2.0   + a ~60 MB .onnx voice, point JARVIS_PIPER_VOICE at it
+#   kokoro>=0.9.0      Apache-2.0, pulls in torch (~2 GB)
+
+soundfile>=0.12.1
+pytest>=7.4.0

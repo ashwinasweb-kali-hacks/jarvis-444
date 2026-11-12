@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "jarvis-workshop": {
+      "type": "stdio",
+      "command": "C:\\Users\\ARUMUGAM\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "args": ["-m", "jarvis.mcp_server"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["docs/JARVIS-OS-STAGES.md"],
+  "model": "9router/free-auto",
+  "mcp": {
+    "servers": {
+      "jarvis-workshop": {
+        "type": "local",
+        "command": [
+          "C:\\Users\\ARUMUGAM\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+          "-m",
+          "jarvis.mcp_server"
+        ]
+      }
+    }
+  },
+  "providers": {
+    "9router": {
+      "name": "9Router (local OAuth gateway)",
+      "env": ["NINE_ROUTER_API_KEY"],
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "http://127.0.0.1:20128/v1"
+      },
+      "models": {
+        "free-auto": {
+          "name": "Free Auto (fallback chain)"
+        },
+        "oc/deepseek-v4.1-flash-free": {
+          "name": "DeepSeek V4.1 Flash (free)"
+        },
+        "oc/glm-5.3-flash-free": {
+          "name": "GLM 5.3 Flash (free)"
+        },
+        "oc/mimo-v2.6-flash-free": {
+          "name": "MiMo v2.6 Flash (free)"
+        },
+        "oc/big-pickle": {
+          "name": "Big Pickle (free, slow cold start)"
+        },
+        "groq/openai/gpt-oss-120b": {
+          "name": "GPT-OSS 120B (Groq, verified working)"
+        }
+      }
+    },
+    "openrouter": {
+      "models": {
+        "recursive/flint-v1.0:free": { "name": "Flint (free)" },
+        "nvidia/nemotron-3.5-super-vl:free": { "name": "Nemotron 3.5 Super VL (free)" },
+        "nvidia/nemotron-3.5-lightning:free": { "name": "Nemotron 3.5 Lightning (free)" },
+        "nvidia/nemotron-3-ultra-550b-a55b:free": { "name": "Nemotron 3 Ultra (free)" },
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": { "name": "Nemotron 3 Nano Omni (free)" },
+        "cohere/north-mini-code:free": { "name": "North Mini Code (free)" },
+        "google/gemma-4-31b-it:free": { "name": "Gemma 4 31B (free)" },
+        "google/gemma-4-26b-a4b-it:free": { "name": "Gemma 4 26B A4B (free)" },
+        "xingchen-agi/xing4.0-29b-a4b:free": { "name": "Xing4.0 29B A4B (free)" },
+        "liquid/lfm-3-1.7b:free": { "name": "LFM3 1.7B (free)" }
+      }
+    }
+  }
+}

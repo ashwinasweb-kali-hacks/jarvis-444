@@ -1,0 +1,88 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "9Router: start gateway",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\scripts\\start-9router.ps1"],
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "9Router: health",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "$k=(Get-Content \"${workspaceFolder}\\gateway\\.9router-key\" -Raw).Trim(); (Invoke-RestMethod http://127.0.0.1:20128/v1/models -Headers @{Authorization=\"Bearer $k\"}).data.Count"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "9Router: probe free models",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "node \"${workspaceFolder}\\gateway\\probe-free.js\""
+      ],
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "9Router: open dashboard",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-NoProfile", "-Command", "Start-Process http://127.0.0.1:20128/dashboard"],
+      "problemMatcher": []
+    },
+    {
+      "label": "OpenCode: start JARVIS session",
+      "type": "shell",
+      "command": "opencode",
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "OpenCode: connect provider (OAuth / browser)",
+      "type": "shell",
+      "command": "opencode",
+      "args": ["auth", "login"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "OpenCode: list MCP servers",
+      "type": "shell",
+      "command": "opencode",
+      "args": ["mcp", "list"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "JARVIS: health",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "Invoke-RestMethod http://127.0.0.1:8765/api/health | ConvertTo-Json -Depth 4"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "JARVIS: tests",
+      "type": "shell",
+      "command": ".venv\\Scripts\\python.exe",
+      "args": ["-m", "pytest", "-q"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ]
+}
